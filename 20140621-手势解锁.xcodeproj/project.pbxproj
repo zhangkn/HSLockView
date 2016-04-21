@@ -15,6 +15,7 @@
 		E1B5B9481CC85D91001AFB31 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E1B5B9461CC85D91001AFB31 /* LaunchScreen.storyboard */; };
 		E1B5B9531CC85D91001AFB31 /* _0140621_____Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = E1B5B9521CC85D91001AFB31 /* _0140621_____Tests.m */; };
 		E1B5B95E1CC85D91001AFB31 /* _0140621_____UITests.m in Sources */ = {isa = PBXBuildFile; fileRef = E1B5B95D1CC85D91001AFB31 /* _0140621_____UITests.m */; };
+		E1B5B9711CC85F89001AFB31 /* HSLockView.m in Sources */ = {isa = PBXBuildFile; fileRef = E1B5B9701CC85F89001AFB31 /* HSLockView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +52,8 @@
 		E1B5B9591CC85D91001AFB31 /* 20140621-手势解锁UITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "20140621-手势解锁UITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E1B5B95D1CC85D91001AFB31 /* _0140621_____UITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "_0140621_____UITests.m"; sourceTree = "<group>"; };
 		E1B5B95F1CC85D91001AFB31 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E1B5B96F1CC85F89001AFB31 /* HSLockView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HSLockView.h; sourceTree = "<group>"; };
+		E1B5B9701CC85F89001AFB31 /* HSLockView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HSLockView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,14 +104,7 @@
 		E1B5B9371CC85D91001AFB31 /* 20140621-手势解锁 */ = {
 			isa = PBXGroup;
 			children = (
-				E1B5B93B1CC85D91001AFB31 /* AppDelegate.h */,
-				E1B5B93C1CC85D91001AFB31 /* AppDelegate.m */,
-				E1B5B93E1CC85D91001AFB31 /* ViewController.h */,
-				E1B5B93F1CC85D91001AFB31 /* ViewController.m */,
-				E1B5B9411CC85D91001AFB31 /* Main.storyboard */,
-				E1B5B9441CC85D91001AFB31 /* Assets.xcassets */,
-				E1B5B9461CC85D91001AFB31 /* LaunchScreen.storyboard */,
-				E1B5B9491CC85D91001AFB31 /* Info.plist */,
+				E1B5B96D1CC85E49001AFB31 /* Classes */,
 				E1B5B9381CC85D91001AFB31 /* Supporting Files */,
 			);
 			path = "20140621-手势解锁";
@@ -117,6 +113,10 @@
 		E1B5B9381CC85D91001AFB31 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				E1B5B9411CC85D91001AFB31 /* Main.storyboard */,
+				E1B5B9441CC85D91001AFB31 /* Assets.xcassets */,
+				E1B5B9461CC85D91001AFB31 /* LaunchScreen.storyboard */,
+				E1B5B9491CC85D91001AFB31 /* Info.plist */,
 				E1B5B9391CC85D91001AFB31 /* main.m */,
 			);
 			name = "Supporting Files";
@@ -138,6 +138,43 @@
 				E1B5B95F1CC85D91001AFB31 /* Info.plist */,
 			);
 			path = "20140621-手势解锁UITests";
+			sourceTree = "<group>";
+		};
+		E1B5B96B1CC85E38001AFB31 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				E1B5B93E1CC85D91001AFB31 /* ViewController.h */,
+				E1B5B93F1CC85D91001AFB31 /* ViewController.m */,
+			);
+			name = Controller;
+			sourceTree = "<group>";
+		};
+		E1B5B96C1CC85E43001AFB31 /* Other */ = {
+			isa = PBXGroup;
+			children = (
+				E1B5B93B1CC85D91001AFB31 /* AppDelegate.h */,
+				E1B5B93C1CC85D91001AFB31 /* AppDelegate.m */,
+			);
+			name = Other;
+			sourceTree = "<group>";
+		};
+		E1B5B96D1CC85E49001AFB31 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				E1B5B96E1CC85E50001AFB31 /* View */,
+				E1B5B96C1CC85E43001AFB31 /* Other */,
+				E1B5B96B1CC85E38001AFB31 /* Controller */,
+			);
+			name = Classes;
+			sourceTree = "<group>";
+		};
+		E1B5B96E1CC85E50001AFB31 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				E1B5B96F1CC85F89001AFB31 /* HSLockView.h */,
+				E1B5B9701CC85F89001AFB31 /* HSLockView.m */,
+			);
+			name = View;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -272,6 +309,7 @@
 			files = (
 				E1B5B9401CC85D91001AFB31 /* ViewController.m in Sources */,
 				E1B5B93D1CC85D91001AFB31 /* AppDelegate.m in Sources */,
+				E1B5B9711CC85F89001AFB31 /* HSLockView.m in Sources */,
 				E1B5B93A1CC85D91001AFB31 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
