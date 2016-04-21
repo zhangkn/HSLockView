@@ -11,7 +11,6 @@
 @interface HSLockView ()
 @property (nonatomic,strong) NSMutableArray *btns;//存储选中按钮
 @property (nonatomic,assign) CGPoint pos;//当前手指的位置
-@property (nonatomic,assign) BOOL isEnd;//手指是否停止移动
 
 
 
@@ -52,6 +51,7 @@
         //绘制按钮
         UIButton *btn = [UIButton buttonWithType:UIButtonTypeCustom];
         //设置共性信息
+        [btn setTag:i];//用于标记按钮
         [btn setImage:normalImage forState:UIControlStateNormal];
         [btn setImage:highlightedImage forState:UIControlStateSelected];//选中状态要手动管理
         /**
@@ -85,10 +85,17 @@
     return [touch locationInView:self];//当前触摸点
 }
 
+/** 选中按钮的获取*/
 - (UIButton *) getButtonWithPos:(CGPoint)pos{
+    //计算选中范围
+    CGRect selectRect;
     UIButton *posBtn ;
+    CGFloat wh =30;
     for (UIButton *btn in self.subviews) {
-        BOOL flg = CGRectContainsPoint(btn.frame, pos);
+        CGFloat x = btn.center.x-wh*0.5;
+        CGFloat y = btn.center.y- wh *0.5;
+        selectRect = CGRectMake(x, y, wh, wh);
+        BOOL flg = CGRectContainsPoint(selectRect, pos);
         if (flg) {
              posBtn = btn;
             break;
@@ -97,15 +104,19 @@
     return posBtn;
 }
 
+#pragma mark - 手指抬起的处理
 - (void)touchesEnded:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event{
-    for (UIButton *btn in self.subviews) {
-        [btn setSelected:NO];
+    //判断是否解锁成功
+    NSMutableString *answerStr = [[NSMutableString alloc]init];
+    for (UIButton *btn in self.btns) {
+        [answerStr appendFormat:@"%d",btn.tag];
     }
-    self.isEnd = YES;
+    NSLog(@"%@",answerStr);
+    //去除选中状态
+    [self.btns makeObjectsPerformSelector:@selector(setSelected:) withObject:NO];
+    //清空轨迹
+    [self.btns removeAllObjects];
     [self setNeedsDisplay];
-
-
-    
 }
 
 /**控制按钮的选择状态 */
@@ -115,6 +126,7 @@
 }
 #endif
 
+/** 存储选中按钮*/
 - (void) touchesMoved:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event{
     CGPoint pos = [self getPosWithTouches:touches];
     [self setPos:pos];
@@ -148,9 +160,7 @@
         }
     }
    
-    if (!self.isEnd) {//移动的时候，进行绘制最后一个点到手指移动的线段
-        [path addLineToPoint:self.pos];
-    }
+    [path addLineToPoint:self.pos];
     //设置绘图状态
     [[UIColor greenColor]set];
     [path  setLineWidth:10];
