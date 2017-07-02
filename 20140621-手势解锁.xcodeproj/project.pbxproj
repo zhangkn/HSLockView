@@ -244,6 +244,7 @@
 				TargetAttributes = {
 					E1B5B9341CC85D91001AFB31 = {
 						CreatedOnToolsVersion = 7.2.1;
+						DevelopmentTeam = FUV5KWMMAV;
 					};
 					E1B5B94D1CC85D91001AFB31 = {
 						CreatedOnToolsVersion = 7.2.1;
@@ -449,9 +450,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = FUV5KWMMAV;
 				INFOPLIST_FILE = "20140621-手势解锁/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.hisunpay.www.-0140621-----";
+				PRODUCT_BUNDLE_IDENTIFIER = com.cmpay.iclound;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -460,9 +462,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = FUV5KWMMAV;
 				INFOPLIST_FILE = "20140621-手势解锁/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.hisunpay.www.-0140621-----";
+				PRODUCT_BUNDLE_IDENTIFIER = com.cmpay.iclound;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;
@@ -534,6 +537,7 @@
 				E1B5B9641CC85D91001AFB31 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		E1B5B9651CC85D91001AFB31 /* Build configuration list for PBXNativeTarget "20140621-手势解锁Tests" */ = {
 			isa = XCConfigurationList;
@@ -542,6 +546,7 @@
 				E1B5B9671CC85D91001AFB31 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		E1B5B9681CC85D91001AFB31 /* Build configuration list for PBXNativeTarget "20140621-手势解锁UITests" */ = {
 			isa = XCConfigurationList;
@@ -550,6 +555,7 @@
 				E1B5B96A1CC85D91001AFB31 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
